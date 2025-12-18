@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MTEC Auto-Stake</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1 class="title">MTEC Auto-Stake</h1>
+
+    <button id="btnConnect" class="btn btn-primary">Connect Wallet</button>
+
+    <div class="small">
+      <span id="chainText">chainId: -</span>
+      <span id="walletText">wallet: -</span>
+    </div>
+
+    <div class="card">
+      <h2>ซื้อแพ็คเกจ MTEC</h2>
+
+      <label>เลือกแพ็คเกจ</label>
+      <select id="packageSelect"></select>
+
+      <div class="row">
+        <button id="btnApprove" class="btn">Approve USDT (Optional)</button>
+        <button id="btnBuy" class="btn btn-primary">Buy & Auto-Stake</button>
+      </div>
+
+      <div id="txMessage" class="msg"></div>
+    </div>
+
+    <div class="card">
+      <h2>Referral</h2>
+      <input id="refLink" readonly />
+      <button id="btnCopy" class="btn">Copy Link</button>
+    </div>
+
+    <div class="foot">
+      Contract: <span id="contractText" class="mono">-</span>
+    </div>
+  </div>
+</body>
+</html>
