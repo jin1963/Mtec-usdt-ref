@@ -1,0 +1,174 @@
+/* style.css — MTEC Auto-Stake (Blue & White Theme) */
+
+:root{
+  --bg1:#f6fbff;
+  --bg2:#eaf4ff;
+  --card:#ffffff;
+  --line:rgba(10, 60, 120, .12);
+
+  --text:#0b1b2b;
+  --muted:rgba(11,27,43,.65);
+
+  --primary:#1e88ff;
+  --primary2:#0b6bff;
+  --primaryGlow:rgba(30,136,255,.18);
+
+  --danger:#ff3b3b;
+  --success:#14a44d;
+
+  --shadow: 0 10px 30px rgba(11, 27, 43, .10);
+  --radius:16px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans Thai", sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% 0%, #d9ecff 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, #cfe8ff 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+}
+
+.wrap{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 22px 16px 34px;
+}
+
+.title{
+  margin: 6px 0 14px;
+  text-align:center;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+.small{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  color:var(--muted);
+  margin: 10px 0 18px;
+  font-size: 13px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin: 14px 0;
+}
+
+.card h2{
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+label{
+  display:block;
+  margin: 10px 0 8px;
+  font-size: 13px;
+  color:var(--muted);
+}
+
+select, input{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  outline: none;
+  background: #fbfdff;
+  color: var(--text);
+  transition: .15s ease;
+}
+
+select:focus, input:focus{
+  border-color: rgba(30,136,255,.5);
+  box-shadow: 0 0 0 4px var(--primaryGlow);
+  background:#ffffff;
+}
+
+.row{
+  display:flex;
+  gap:12px;
+  margin-top: 14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  appearance:none;
+  border: 1px solid rgba(30,136,255,.35);
+  background: #ffffff;
+  color: var(--primary2);
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor:pointer;
+  transition: .15s ease;
+  box-shadow: 0 6px 18px rgba(11,27,43,.06);
+  flex: 1 1 220px;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11,27,43,.10);
+}
+
+.btn:active{
+  transform: translateY(0px);
+  box-shadow: 0 6px 18px rgba(11,27,43,.06);
+}
+
+.btn:disabled{
+  cursor:not-allowed;
+  opacity:.65;
+  transform:none !important;
+}
+
+.btn-primary{
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  color:#fff;
+  box-shadow: 0 10px 26px rgba(30,136,255,.22);
+}
+
+.btn-primary:hover{
+  box-shadow: 0 14px 34px rgba(30,136,255,.26);
+}
+
+.msg{
+  margin-top: 14px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #f7fbff;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.35;
+  opacity: 0; /* app.js จะเปิดเป็น 1 เมื่อมีข้อความ */
+  transition: .15s ease;
+}
+
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.foot{
+  text-align:center;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 520px){
+  .wrap{ padding: 18px 12px 28px; }
+  .card{ padding: 14px; }
+  .btn{ flex: 1 1 100%; }
+}
